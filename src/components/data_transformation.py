@@ -21,10 +21,11 @@ class DataTransformationConfig:
 class DataTransformation:
     def __init__(self):
         self.data_transformation_config=DataTransformationConfig()
+        os.makedirs('artifacts', exist_ok=True)
 
     def get_data_transformer_object(self):
         '''
-        This function is responsible for data trnasformation
+        This function si responsible for data trnasformation
         
         '''
         try:
@@ -122,4 +123,5 @@ class DataTransformation:
             )
         except Exception as e:
             raise CustomException(e,sys)
+
 
